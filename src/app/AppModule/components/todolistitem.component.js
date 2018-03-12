@@ -12,7 +12,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var TodoListItemComponent = /** @class */ (function () {
     function TodoListItemComponent() {
+        this.hasBeenCompleted = false;
+        this.completed = new core_1.EventEmitter();
     }
+    TodoListItemComponent.prototype.completeItem = function () {
+        if (!this.hasBeenCompleted) {
+            this.completed.emit(true);
+            this.hasBeenCompleted = true;
+        }
+    };
     TodoListItemComponent.prototype.ngOnInit = function () {
         console.log("finished rendering");
     };
@@ -30,9 +38,11 @@ var TodoListItemComponent = /** @class */ (function () {
     TodoListItemComponent = __decorate([
         core_1.Component({
             selector: "todo-item",
-            template: "<div><input type='checkbox' /> {{name}}</div>"
+            template: "<div><input type='checkbox' (click)='completeItem()' /> {{name}} ({{hasBeenCompleted}})</div>",
+            outputs: ["completed"]
             //inputs: ["name"]
-        })
+        }),
+        __metadata("design:paramtypes", [])
     ], TodoListItemComponent);
     return TodoListItemComponent;
 }());

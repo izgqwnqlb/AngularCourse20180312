@@ -8,6 +8,7 @@ import { Component, Input } from "@angular/core";
 export class TodoListComponent {
 
     public dynamicItem: string;
+    public completedItemsCounter: number = 0;
 
     constructor() {
         this.dynamicItem = "TEST DYNAMIC";
@@ -17,6 +18,10 @@ export class TodoListComponent {
 
         this.dynamicItem = newTodoItem.value;
         newTodoItem.value = "";
+    }
+
+    public increaseItemsCounter(): void {
+        this.completedItemsCounter++;
     }
 
 }

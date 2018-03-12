@@ -12,11 +12,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var TodoListComponent = /** @class */ (function () {
     function TodoListComponent() {
+        this.completedItemsCounter = 0;
         this.dynamicItem = "TEST DYNAMIC";
     }
     TodoListComponent.prototype.changeDynamicItem = function (newTodoItem) {
         this.dynamicItem = newTodoItem.value;
         newTodoItem.value = "";
+    };
+    TodoListComponent.prototype.increaseItemsCounter = function () {
+        this.completedItemsCounter++;
     };
     TodoListComponent = __decorate([
         core_1.Component({

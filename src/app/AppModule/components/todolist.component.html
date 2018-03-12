@@ -1,10 +1,13 @@
 <h1>TodoList</h1>
+
+<div>I have completed <b>{{completedItemsCounter}}</b> items from my list</div>
+
 <hr>
 
-<todo-item name="Learn Angular"></todo-item>
-<todo-item name="Find Hololens menu"></todo-item>
-<todo-item name="Learn TypeScript"></todo-item>
-<todo-item [name]="dynamicItem"></todo-item>
+<todo-item name="Learn Angular" (completed)="increaseItemsCounter()"></todo-item>
+<todo-item name="Find Hololens menu" (completed)="increaseItemsCounter()"></todo-item>
+<todo-item name="Learn TypeScript" (completed)="increaseItemsCounter()"></todo-item>
+<todo-item [name]="dynamicItem" (completed)="increaseItemsCounter()"></todo-item>
 
 <hr>
 

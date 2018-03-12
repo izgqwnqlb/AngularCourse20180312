@@ -1,14 +1,32 @@
-import { Component, Input, SimpleChange } from "@angular/core";
+import { Component, Input, SimpleChange, EventEmitter } from "@angular/core";
 
 @Component({
     selector: "todo-item",
-    template:"<div><input type='checkbox' /> {{name}}</div>"
+    template:"<div><input type='checkbox' (click)='completeItem()' /> {{name}} ({{hasBeenCompleted}})</div>",
+    outputs:["completed"]
     //inputs: ["name"]
 })
 export class TodoListItemComponent {
 
     @Input()
     public name: string;
+
+    public completed: EventEmitter<boolean>
+
+    public hasBeenCompleted: boolean = false;
+
+    constructor() {
+        this.completed = new EventEmitter<boolean>();
+    }
+
+    public completeItem(): void {
+       
+        if (!this.hasBeenCompleted) {
+            this.completed.emit(true);
+            this.hasBeenCompleted = true;
+        }
+
+    }
 
     public ngOnInit(): void {
 
