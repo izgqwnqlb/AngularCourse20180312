@@ -10,24 +10,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var AppComponent = /** @class */ (function () {
-    function AppComponent() {
-        this.developer = "Matthias";
+var TodoListComponent = /** @class */ (function () {
+    function TodoListComponent() {
+        this.dynamicItem = "TEST DYNAMIC";
     }
-    AppComponent.prototype.clearDeveloperName = function () {
-        this.developer = "";
-    };
-    AppComponent = __decorate([
+    TodoListComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: "my-app",
-            templateUrl: "./app.component.html",
-            styleUrls: ["./app.component.css"],
-            encapsulation: core_1.ViewEncapsulation.Emulated
+            selector: "todo-list",
+            templateUrl: "./todolist.component.html"
         }),
         __metadata("design:paramtypes", [])
-    ], AppComponent);
-    return AppComponent;
+    ], TodoListComponent);
+    return TodoListComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.TodoListComponent = TodoListComponent;
+//# sourceMappingURL=todolist.component.js.map

@@ -9,12 +9,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var app_component_1 = require("./components/app.component");
+var todolist_component_1 = require("./components/todolist.component");
+var todolistitem_component_1 = require("./components/todolistitem.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            declarations: [app_component_1.AppComponent],
+            declarations: [app_component_1.AppComponent, todolist_component_1.TodoListComponent, todolistitem_component_1.TodoListItemComponent],
             providers: [],
             imports: [platform_browser_1.BrowserModule],
             exports: [],
