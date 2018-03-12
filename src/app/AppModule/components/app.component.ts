@@ -15,6 +15,7 @@ export class AppComponent {
     constructor() {
         this.developer = "Matthias";
     }
+ 
 
     public clearDeveloperName(): void {
         this.developer = "";

@@ -14,6 +14,10 @@ var TodoListComponent = /** @class */ (function () {
     function TodoListComponent() {
         this.dynamicItem = "TEST DYNAMIC";
     }
+    TodoListComponent.prototype.changeDynamicItem = function (newTodoItem) {
+        this.dynamicItem = newTodoItem.value;
+        newTodoItem.value = "";
+    };
     TodoListComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

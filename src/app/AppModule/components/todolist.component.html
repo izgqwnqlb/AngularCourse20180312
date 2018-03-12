@@ -5,3 +5,8 @@
 <todo-item name="Find Hololens menu"></todo-item>
 <todo-item name="Learn TypeScript"></todo-item>
 <todo-item [name]="dynamicItem"></todo-item>
+
+<hr>
+
+<input type="text" #dynamicTodoInput />
+<button (click)="changeDynamicItem(dynamicTodoInput)">Set</button>
